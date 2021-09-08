@@ -3,7 +3,7 @@ Feature: Curso de Karate
 
 Background:
 # cometario esta variable viene del karate-config.js
-* url miVariableUrl
+* url baseUrl
 * def myPet = 
 """
     {
@@ -27,7 +27,7 @@ Background:
 """
 
 Scenario: Find Pets by Status
-Given url miVariableUrl
+Given url baseUrl
 And path 'pet', 'findByStatus'
 And param status = 'availableXXX'
 When method GET
@@ -46,5 +46,11 @@ Given request myPet
 When method post
 Then assert responseStatus == 200
 * print response
+
+Scenario: compare files
+    Given path 'pet'
+    * def myPetJson = read('test-data/payload.json')
+    * def mypetYml = read('test-data/payload.yml')
+    * match myPetJson == mypetYml
 
 
