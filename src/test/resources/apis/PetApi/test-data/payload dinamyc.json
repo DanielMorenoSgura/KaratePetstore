@@ -1,10 +1,7 @@
 {
     "id": #(id),
     "name": #(name),
-    "category": {
-      "id": 1,
-      "name": #(category)
-    },
+    "category": #(myCategory),
     "photoUrls": [
       "string"
     ],

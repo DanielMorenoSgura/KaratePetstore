@@ -1,6 +1,6 @@
 id: '#(id)'
 name: '#(name)'
-category: '#(category)'
+category: '#(myCategory)'
 photoUrls:
 - string
 tags:
